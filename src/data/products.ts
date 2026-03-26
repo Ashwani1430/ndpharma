@@ -45,7 +45,7 @@ export const products: Product[] = [
   {
     id: "raktshodh-syrup",
     name: "Raktshodh Syrup",
-    image: rakthodhImg,
+    image: raktshodhImg,
     description: "Powerful blood purifier syrup that detoxifies the body and promotes clear, healthy skin.",
     benefits: ["Blood purification", "Skin health", "Detoxification", "Immune support"],
     category: "Blood Purifier",
