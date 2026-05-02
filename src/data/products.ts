@@ -7,6 +7,8 @@ import maltowinImg from "@/assets/products/maltowin-malt.jpg";
 import ashokaImg from "@/assets/products/ashoka-tonic.jpg";
 import heptocalImg from "@/assets/products/heptocal-tonic.jpg";
 import irofolImg from "@/assets/products/irofol-syrup.jpg";
+import gasonidImg from "@/assets/products/gasonid-syrup.jpg";
+import goodHealthImg from "@/assets/products/good-health-syrup.jpg";
 
 export interface Product {
   id: string;
@@ -88,6 +90,22 @@ export const products: Product[] = [
     image: irofolImg,
     description: "Iron-rich Ayurvedic syrup to combat iron deficiency, boost hemoglobin, and improve energy levels.",
     benefits: ["Iron supplement", "Boosts hemoglobin", "Fights fatigue", "Natural iron source"],
+    category: "Nutrition",
+  },
+  {
+    id: "gasonid-syrup",
+    name: "Gasonid Syrup",
+    image: gasonidImg,
+    description: "Ayurvedic digestive syrup that relieves acidity, indigestion, gas, and nausea naturally.",
+    benefits: ["Relieves acidity", "Aids digestion", "Reduces gas", "Herbal formula"],
+    category: "Digestive Care",
+  },
+  {
+    id: "good-health-syrup",
+    name: "Good Health Syrup",
+    image: goodHealthImg,
+    description: "Vitamin-enriched Ayurvedic tonic for strength, stamina, and relief from physical weakness and fatigue.",
+    benefits: ["Boosts strength", "Fights fatigue", "Improves stamina", "For all ages"],
     category: "Nutrition",
   },
 ];
