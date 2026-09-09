@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { products } from "@/data/products";
 import SectionHeading from "@/components/SectionHeading";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -23,38 +24,39 @@ const Products = () => (
         <SectionHeading title="Complete Product Range" subtitle="Explore our full range of GMP-certified Ayurvedic medicines and herbal healthcare products." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, i) => (
-            <motion.div
-              key={product.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="product-card group"
-            >
-              <div className="aspect-square overflow-hidden bg-sage">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  loading="lazy"
-                  width={512}
-                  height={512}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-6 space-y-3">
-                <span className="text-xs font-medium text-gold uppercase tracking-wider">{product.category}</span>
-                <h3 className="font-heading text-xl font-semibold text-foreground">{product.name}</h3>
-                <p className="text-sm text-muted-foreground">{product.description}</p>
-                <div className="pt-2">
-                  <h4 className="text-xs font-semibold text-foreground mb-2 uppercase tracking-wider">Key Benefits:</h4>
-                  <ul className="flex flex-wrap gap-2">
-                    {product.benefits.map((b) => (
-                      <li key={b} className="text-xs bg-sage text-secondary-foreground px-3 py-1 rounded-full">{b}</li>
-                    ))}
-                  </ul>
+            <Link to={`/products/${product.id}`} key={product.id} className="block group">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="product-card h-full"
+              >
+                <div className="aspect-square overflow-hidden bg-white p-4 flex items-center justify-center">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
-              </div>
-            </motion.div>
+                <div className="p-6 space-y-3">
+                  <span className="text-xs font-medium text-gold uppercase tracking-wider">{product.category}</span>
+                  <h3 className="font-heading text-xl font-semibold text-foreground group-hover:text-primary transition-colors">{product.name}</h3>
+                  <p className="text-sm text-muted-foreground">{product.description}</p>
+                  <div className="pt-2">
+                    <h4 className="text-xs font-semibold text-foreground mb-2 uppercase tracking-wider">Key Benefits:</h4>
+                    <ul className="flex flex-wrap gap-2">
+                      {product.benefits.map((b) => (
+                        <li key={b} className="text-xs bg-sage text-secondary-foreground px-3 py-1 rounded-full">{b}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
